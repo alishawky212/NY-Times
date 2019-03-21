@@ -1,0 +1,75 @@
+ext {
+    versions = [
+            compileSdk            : 28,
+            targetSdk             : 28,
+            minSdk                : 19,
+            buildTools            : '27.0.3',
+            material              : '1.0.0-alpha1',
+            inject                : '1',
+
+
+            // Main dependencies
+            support               : '28.0.0',
+            constraintLayout      : '2.0.0-alpha2',
+            dagger                : '2.14.1',
+            circularImage         : '2.2.0',
+            playServices          : '11.8.0',
+            rxJava                : '2.2.2',
+            rxAndroid             : '2.0.2',
+            okhttp                : '3.10.0',
+            butterKnife           : '8.8.1',
+            butterKnifeCompiler   : '8.5.1',
+            gson                  : '2.8.5',
+            retrofite             : '2.5.0',
+            retrofitRxAdapter     :'2.4.0',
+            fresco                : '1.7.1',
+            lifecycle             : '1.1.1',
+
+            // For testing
+            junit                 : '4.12',
+            truth                 : '0.36',
+            espresso              : '3.0.2',
+            mockito               : '2.10.0',
+            testRunner            : '1.0.2'
+    ]
+    libraries = [
+            appCompat             : "com.android.support:appcompat-v7:${versions.support}",
+            annotations           : "com.android.support:support-annotations:${versions.support}",
+            recyclerview          : "com.android.support:recyclerview-v7:${versions.support}",
+            design                : "com.android.support:design:${versions.support}",
+            constraintLayout      : "com.android.support.constraint:constraint-layout:${versions.constraintLayout}",
+            cardView              : "com.android.support:cardview-v7:${versions.support}",
+            material              : "com.google.android.material:material:${versions.material}",
+
+            dagger                : "com.google.dagger:dagger:${versions.dagger}",
+            daggerSupport         : "com.google.dagger:dagger-android-support:${versions.dagger}",
+            daggerProcessor       : "com.google.dagger:dagger-compiler:${versions.dagger}",
+            daggerAndroidApt      : "com.google.dagger:dagger-android-processor:${versions.dagger}",
+            circularImage         : "de.hdodenhof:circleimageview:${versions.circularImage}",
+            fresco                : "com.facebook.fresco:fresco:${versions.fresco}",
+            lifecycleExtensions   : "android.arch.lifecycle:extensions:${versions.lifecycle}",
+            lifecycleCompiler     : "android.arch.lifecycle:compiler:${versions.lifecycle}",
+
+            rxJava                : "io.reactivex.rxjava2:rxjava:${versions.rxJava}",
+            rxAndroid             : "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}",
+            butterKnifeCompiler   : "com.jakewharton:butterknife-compiler:$versions.butterKnifeCompiler",
+
+            inject                : "javax.inject:javax.inject:$versions.inject" ,
+
+            okhttp                : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+            okhttpLogger          : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+            butterKnife           : "com.jakewharton:butterknife:${versions.butterKnife}",
+            gson                  : "com.google.code.gson:gson:$versions.gson",
+            retrofite             :"com.squareup.retrofit2:retrofit:$versions.retrofite",
+            retrofitConverter     :"com.squareup.retrofit2:converter-gson:$versions.retrofite",
+            retrofitRxAdapter     : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofitRxAdapter",
+            // For testing
+            junit                 : "junit:junit:$versions.junit",
+            espressoCore          : "com.android.support.test.espresso:espresso-core:${versions.espresso}",
+            espressoIntents       : "com.android.support.test.espresso:espresso-intents:${versions.espresso}",
+            roomTest              : "android.arch.persistence.room:testing:${versions.room}",
+            truth                 : "com.google.truth:truth:$versions.truth",
+            testRunner            : "com.android.support.test:runner:$versions.testRunner"
+    ]
+}
+

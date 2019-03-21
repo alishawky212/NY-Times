@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        applicationId "com.example.nytimes"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libraries.appCompat
+    implementation libraries.constraintLayout
+    implementation libraries.dagger
+    implementation libraries.daggerSupport
+    annotationProcessor libraries.daggerProcessor
+    annotationProcessor libraries.daggerAndroidApt
+    implementation libraries.okhttpLogger
+    implementation libraries.gson
+    implementation libraries.retrofite
+    implementation libraries.retrofitConverter
+    implementation libraries.retrofitRxAdapter
+    implementation libraries.butterKnife
+    annotationProcessor libraries.butterKnifeCompiler
+    implementation libraries.lifecycleExtensions
+    annotationProcessor libraries.lifecycleCompiler
+    implementation libraries.fresco
+    implementation project(':domain')
+    implementation project(':data')
+    testImplementation libraries.junit
+    androidTestImplementation libraries.testRunner
+    androidTestImplementation libraries.espressoCore
+}

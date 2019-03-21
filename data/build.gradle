@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':domain')
+
+    implementation libraries.appCompat
+    implementation libraries.gson
+    implementation libraries.annotations
+    implementation libraries.retrofitRxAdapter
+    implementation libraries.retrofite
+    implementation libraries.retrofitConverter
+    implementation libraries.rxJava
+    implementation libraries.rxAndroid
+    implementation libraries.inject
+
+    testImplementation libraries.junit
+    androidTestImplementation libraries.testRunner
+    androidTestImplementation libraries.espressoCore
+}

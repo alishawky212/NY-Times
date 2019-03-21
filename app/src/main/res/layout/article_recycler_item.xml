@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderImage="@mipmap/ic_launcher"
+        app:roundAsCircle="true"
+        app:roundingBorderColor="@color/colorPrimary"
+        app:roundingBorderWidth=".5dp" />
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@+id/icon_right"
+        android:layout_toLeftOf="@+id/icon_right"
+        android:layout_toEndOf="@+id/image"
+        android:layout_toRightOf="@+id/image"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="ahmed "
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/created_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@+id/icon_right"
+        android:layout_toLeftOf="@+id/icon_right"
+        android:layout_toEndOf="@+id/image"
+        android:layout_toRightOf="@+id/image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="ahmed "
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/created_by"
+        android:layout_toEndOf="@+id/image"
+        android:layout_toRightOf="@+id/image"
+        android:maxLines="1"
+        android:textSize="10sp" />
+
+    <include
+        layout="@layout/date_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/created_by"
+        android:layout_toStartOf="@+id/icon_right"
+
+        android:layout_toLeftOf="@+id/icon_right" />
+
+    <ImageView
+        android:id="@+id/icon_right"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/arrow_right" />
+
+
+</RelativeLayout>
