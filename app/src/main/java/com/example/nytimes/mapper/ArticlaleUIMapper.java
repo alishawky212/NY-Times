@@ -6,7 +6,13 @@ import com.example.nytimes.models.ArticaleUIModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class ArticlaleUIMapper {
+
+    @Inject
+    public ArticlaleUIMapper() {
+    }
 
     public List<ArticaleUIModel> mapUIListArticales(List<Articale> articales){
 

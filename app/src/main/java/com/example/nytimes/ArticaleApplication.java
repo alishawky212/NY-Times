@@ -1,6 +1,7 @@
 package com.example.nytimes;
 
 import android.app.Activity;
+import android.app.Application;
 import android.support.v4.app.Fragment;
 
 
@@ -14,7 +15,7 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class ArticaleApplication extends android.app.Application implements HasActivityInjector, HasSupportFragmentInjector {
+public class ArticaleApplication extends Application implements HasActivityInjector, HasSupportFragmentInjector {
 
 
 

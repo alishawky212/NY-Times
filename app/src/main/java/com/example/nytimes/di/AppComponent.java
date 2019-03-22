@@ -2,6 +2,7 @@ package com.example.nytimes.di;
 
 import android.app.Application;
 
+import com.example.data.remote.RemoteApis;
 import com.example.nytimes.ArticaleApplication;
 
 import javax.inject.Named;
@@ -12,11 +13,9 @@ import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
-@Component(modules ={AndroidSupportInjectionModule.class, NetworkModule.class,ActivityBuilder.class,RepositoryModule.class})
+@Component(modules ={AndroidSupportInjectionModule.class,NetworkModule.class,ActivityBuilder.class,RepositoryModule.class})
 public interface AppComponent {
     void inject(ArticaleApplication app);
-
-
     @Component.Builder
     interface Builder {
         @BindsInstance

@@ -10,7 +10,13 @@ import com.example.domain.model.Medium;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class ArticalesMapper {
+
+    @Inject
+    public ArticalesMapper() {
+    }
 
     public List<Articale> mapToListDomainAreticle(List<ArticaleDataModel> articale){
         List<Articale> articales = new ArrayList<>();

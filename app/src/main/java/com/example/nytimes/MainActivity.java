@@ -1,5 +1,6 @@
 package com.example.nytimes;
 
+import android.arch.lifecycle.ViewModelProvider;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
 
     @Inject
     ArticlesFragment articlesFragment;
+
+//    @Inject
+//    ViewModelProvider.Factory viewModelFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
