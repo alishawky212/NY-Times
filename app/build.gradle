@@ -10,17 +10,21 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    buildTypes.each {
+        buildTypes.each {
+            it.buildConfigField 'String', 'API_KEY', "\"cdUar5iB34vC4CAc9AN4i1Pi1UM6hamz\""
         }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libraries.appCompat
+    implementation libraries.design
     implementation libraries.constraintLayout
     implementation libraries.dagger
     implementation libraries.daggerSupport
@@ -32,6 +36,10 @@ dependencies {
     implementation libraries.retrofitConverter
     implementation libraries.retrofitRxAdapter
     implementation libraries.butterKnife
+    implementation libraries.rxJava
+    implementation libraries.rxAndroid
+    implementation libraries.idling
+
     annotationProcessor libraries.butterKnifeCompiler
     implementation libraries.lifecycleExtensions
     annotationProcessor libraries.lifecycleCompiler
@@ -41,4 +49,6 @@ dependencies {
     testImplementation libraries.junit
     androidTestImplementation libraries.testRunner
     androidTestImplementation libraries.espressoCore
+    androidTestImplementation libraries.idlingConcurrent
+    androidTestImplementation libraries.testRules
 }

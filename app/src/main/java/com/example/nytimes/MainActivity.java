@@ -12,12 +12,10 @@ import javax.inject.Inject;
 import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
+import dagger.android.support.DaggerAppCompatActivity;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class MainActivity extends AppCompatActivity implements HasSupportFragmentInjector {
-
-    @Inject
-    DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
+public class MainActivity extends DaggerAppCompatActivity {
 
     @Inject
     ArticlesFragment articlesFragment;
@@ -27,17 +25,12 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         //IdlingRegistry.getInstance().register(EspressoIdlingResource.getIdlingResource());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
     }
 
-    @Override
-    public AndroidInjector<Fragment> supportFragmentInjector() {
-        return fragmentDispatchingAndroidInjector;
-    }
 
     void initView() {
         getSupportFragmentManager().beginTransaction()

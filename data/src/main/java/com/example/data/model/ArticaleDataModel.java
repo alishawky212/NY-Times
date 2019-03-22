@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class ArticaleDataModel {
 
+
     @SerializedName("abstract")
     private String mAbstract;
     @SerializedName("adx_keywords")
@@ -16,51 +17,39 @@ public class ArticaleDataModel {
     private String mByline;
     @SerializedName("column")
     private Object mColumn;
-    @SerializedName("count_type")
-    private String mCountType;
     @SerializedName("des_facet")
-    private List<String> mDesFacet;
-    @SerializedName("email_count")
-    private Long mEmailCount;
-    @SerializedName("eta_id")
-    private Long mEtaId;
+    private Object mDesFacet;
     @SerializedName("geo_facet")
-    private String mGeoFacet;
+    private Object mGeoFacet;
     @SerializedName("id")
     private Long mId;
     @SerializedName("media")
     private List<MediumDataModel> mMedia;
-    @SerializedName("nytdsection")
-    private String mNytdsection;
     @SerializedName("org_facet")
-    private List<String> mOrgFacet;
+    private Object mOrgFacet;
     @SerializedName("per_facet")
-    private List<String> mPerFacet;
+    private Object mPerFacet;
     @SerializedName("published_date")
     private String mPublishedDate;
     @SerializedName("section")
     private String mSection;
     @SerializedName("source")
     private String mSource;
-    @SerializedName("subsection")
-    private String mSubsection;
     @SerializedName("title")
     private String mTitle;
     @SerializedName("type")
     private String mType;
-    @SerializedName("updated")
-    private String mUpdated;
-    @SerializedName("uri")
-    private String mUri;
     @SerializedName("url")
     private String mUrl;
+    @SerializedName("views")
+    private Long mViews;
 
     public String getAbstract() {
         return mAbstract;
     }
 
-    public void setAbstract(String mbstract) {
-        mAbstract = mbstract;
+    public void setAbstract(String mAbstract) {
+        this.mAbstract = mAbstract;
     }
 
     public String getAdxKeywords() {
@@ -95,15 +84,7 @@ public class ArticaleDataModel {
         mColumn = column;
     }
 
-    public String getCountType() {
-        return mCountType;
-    }
-
-    public void setCountType(String countType) {
-        mCountType = countType;
-    }
-
-    public List<String> getDesFacet() {
+    public Object getDesFacet() {
         return mDesFacet;
     }
 
@@ -111,23 +92,7 @@ public class ArticaleDataModel {
         mDesFacet = desFacet;
     }
 
-    public Long getEmailCount() {
-        return mEmailCount;
-    }
-
-    public void setEmailCount(Long emailCount) {
-        mEmailCount = emailCount;
-    }
-
-    public Long getEtaId() {
-        return mEtaId;
-    }
-
-    public void setEtaId(Long etaId) {
-        mEtaId = etaId;
-    }
-
-    public String getGeoFacet() {
+    public Object getGeoFacet() {
         return mGeoFacet;
     }
 
@@ -151,23 +116,15 @@ public class ArticaleDataModel {
         mMedia = media;
     }
 
-    public String getNytdsection() {
-        return mNytdsection;
-    }
-
-    public void setNytdsection(String nytdsection) {
-        mNytdsection = nytdsection;
-    }
-
-    public List<String> getOrgFacet() {
+    public Object getOrgFacet() {
         return mOrgFacet;
     }
 
-    public void setOrgFacet(List<String> orgFacet) {
+    public void setOrgFacet(String orgFacet) {
         mOrgFacet = orgFacet;
     }
 
-    public List<String> getPerFacet() {
+    public Object getPerFacet() {
         return mPerFacet;
     }
 
@@ -199,14 +156,6 @@ public class ArticaleDataModel {
         mSource = source;
     }
 
-    public String getSubsection() {
-        return mSubsection;
-    }
-
-    public void setSubsection(String subsection) {
-        mSubsection = subsection;
-    }
-
     public String getTitle() {
         return mTitle;
     }
@@ -223,28 +172,20 @@ public class ArticaleDataModel {
         mType = type;
     }
 
-    public String getUpdated() {
-        return mUpdated;
-    }
-
-    public void setUpdated(String updated) {
-        mUpdated = updated;
-    }
-
-    public String getUri() {
-        return mUri;
-    }
-
-    public void setUri(String uri) {
-        mUri = uri;
-    }
-
     public String getUrl() {
         return mUrl;
     }
 
     public void setUrl(String url) {
         mUrl = url;
+    }
+
+    public Long getViews() {
+        return mViews;
+    }
+
+    public void setViews(Long views) {
+        mViews = views;
     }
 
 }

@@ -30,32 +30,29 @@ public class ArticalesMapper {
 
 
     private Articale mapToDomain(ArticaleDataModel dataModel){
-        return new Articale(
-                dataModel.getAbstract(),
-                dataModel.getAdxKeywords(),
-                dataModel.getAssetId(),
-                dataModel.getByline(),
-                dataModel.getColumn(),
-                dataModel.getCountType(),
-                dataModel.getDesFacet(),
-                dataModel.getEmailCount(),
-                dataModel.getEtaId(),
-                dataModel.getGeoFacet(),
-                dataModel.getId(),
-                mapToDomainListMeduim(dataModel.getMedia()),
-                dataModel.getNytdsection(),
-                dataModel.getOrgFacet(),
-                dataModel.getPerFacet(),
-                dataModel.getPublishedDate(),
-                dataModel.getSection(),
-                dataModel.getSource(),
-                dataModel.getSubsection(),
-                dataModel.getTitle(),
-                dataModel.getType(),
-                dataModel.getUpdated(),
-                dataModel.getUri(),
-                dataModel.getUrl()
-        );
+        Articale articale = new Articale();
+        articale.setAbstract(dataModel.getAbstract());
+        articale.setAdxKeywords(dataModel.getAdxKeywords());
+        articale.setAssetId(dataModel.getAssetId());
+        articale.setByline(dataModel.getByline());
+        articale.setViews(dataModel.getViews());
+        articale.setColumn(dataModel.getColumn());
+        articale.setDesFacet(dataModel.getDesFacet());
+        articale.setId(dataModel.getId());
+        articale.setDesFacet(dataModel.getDesFacet());
+        articale.setGeoFacet(dataModel.getGeoFacet());
+        articale.setMedia(mapToDomainListMeduim(dataModel.getMedia()));
+        articale.setOrgFacet(dataModel.getOrgFacet());
+        articale.setPerFacet(dataModel.getPerFacet());
+        articale.setPublishedDate(dataModel.getPublishedDate());
+        articale.setSection(dataModel.getSection());
+        articale.setSource(dataModel.getSource());
+        articale.setTitle(dataModel.getTitle());
+        articale.setType(dataModel.getType());
+        articale.setUrl(dataModel.getUrl());
+
+        return articale;
+
     }
 
     private List<Medium> mapToDomainListMeduim(List<MediumDataModel> mediumDataModels){

@@ -24,7 +24,7 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
 
 
     List<ArticaleUIModel> articles = new ArrayList<>();
-    //ItemClickListener<ArticaleUIModel> itemClickListener;
+    itemClickListener itemClickListener;
 
     @Inject
     public ArticlesAdapter() {
@@ -52,9 +52,13 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         notifyDataSetChanged();
     }
 
-    /*public void setItemClickListenr(ItemClickListener<ArticaleUIModel> itemClickListenr) {
+    public void setItemClickListenr(itemClickListener itemClickListenr) {
         this.itemClickListener = itemClickListenr;
-    }*/
+    }
+
+    public interface itemClickListener {
+        void onItemClicked(ArticaleUIModel articaleUIModel);
+    }
 
     @Override
     public int getItemCount() {
@@ -78,12 +82,10 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
         public ArticlesViewHolder(final View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
+            itemView.setOnClickListener(view ->
+                    itemClickListener.onItemClicked(articles.get(getAdapterPosition())
+                    )
+            );
 
         }
     }

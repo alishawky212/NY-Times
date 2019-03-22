@@ -1,0 +1,24 @@
+<android.support.design.widget.CollapsingToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    app:contentScrim="?attr/colorPrimary"
+    app:expandedTitleGravity="top"
+    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+    app:toolbarId="@+id/toolbar">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:layout_collapseMode="parallax" />
+
+
+    <include layout="@layout/tool_bar" />
+
+</android.support.design.widget.CollapsingToolbarLayout>

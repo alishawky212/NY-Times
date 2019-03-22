@@ -2,16 +2,11 @@ package com.example.nytimes.di;
 
 
 
-import android.arch.lifecycle.ViewModel;
-
-import com.example.nytimes.mapper.ArticlaleUIMapper;
-import com.example.nytimes.master.ArticalesViewModel;
+import com.example.nytimes.mapper.ArticleUIMapper;
 import com.example.nytimes.master.ArticlesFragment;
 
-import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
-import dagger.multibindings.IntoMap;
 
 @Module
 public class ActivityModule {
@@ -22,8 +17,8 @@ public class ActivityModule {
     }
 
     @Provides
-    ArticlaleUIMapper provideMapper (){
-        return new ArticlaleUIMapper();
+    ArticleUIMapper provideMapper (){
+        return new ArticleUIMapper();
     }
 
 }

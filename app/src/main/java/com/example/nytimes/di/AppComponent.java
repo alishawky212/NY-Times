@@ -13,7 +13,7 @@ import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
-@Component(modules ={AndroidSupportInjectionModule.class,NetworkModule.class,ActivityBuilder.class,RepositoryModule.class})
+@Component(modules ={AndroidSupportInjectionModule.class,ArticalesViewModelModule.class,NetworkModule.class,ActivityBuilder.class,RepositoryModule.class})
 public interface AppComponent {
     void inject(ArticaleApplication app);
     @Component.Builder

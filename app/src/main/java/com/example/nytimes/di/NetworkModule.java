@@ -20,22 +20,16 @@ public class NetworkModule {
     @Provides
     @Singleton
     HttpLoggingInterceptor loggingInterceptor(){
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
-            @Override
-            public void log(String message) {
-
-            }
-        });
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         return interceptor;
     }
 
     @Provides
     @Singleton
-    public OkHttpClient okHttpClient(HttpLoggingInterceptor loggingInterceptor, Cache cache) {
+    public OkHttpClient okHttpClient(HttpLoggingInterceptor loggingInterceptor) {
         return new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
-                .cache(cache)
                 .build();
     }
 

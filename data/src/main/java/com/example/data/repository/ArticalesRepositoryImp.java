@@ -28,8 +28,8 @@ public class ArticalesRepositoryImp implements ArticalesRepository {
 
     @Override
     public Single<List<Articale>> getArticles(String apiKey) {
-        return getRemoteArticles(apiKey).subscribeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+        return getRemoteArticles(apiKey).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .map(new Function<ArticalesRemote, List<Articale>>() {
                     @Override
                     public List<Articale> apply(ArticalesRemote articalesRemote) throws Exception {

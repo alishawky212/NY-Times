@@ -9,9 +9,9 @@ ext {
 
 
             // Main dependencies
-            support               : '28.0.0',
+            support               : '27.1.1',
             constraintLayout      : '2.0.0-alpha2',
-            dagger                : '2.14.1',
+            dagger                : '2.11',
             circularImage         : '2.2.0',
             playServices          : '11.8.0',
             rxJava                : '2.2.2',
@@ -69,7 +69,12 @@ ext {
             espressoIntents       : "com.android.support.test.espresso:espresso-intents:${versions.espresso}",
             roomTest              : "android.arch.persistence.room:testing:${versions.room}",
             truth                 : "com.google.truth:truth:$versions.truth",
-            testRunner            : "com.android.support.test:runner:$versions.testRunner"
+            testRunner            : "com.android.support.test:runner:$versions.testRunner",
+            idling                : "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso",
+            idlingConcurrent      : "com.android.support.test.espresso.idling:idling-concurrent:$versions.espresso",
+            contrib               : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+            testRules             : "com.android.support.test:rules:$versions.testRunner"
+
     ]
 }
 

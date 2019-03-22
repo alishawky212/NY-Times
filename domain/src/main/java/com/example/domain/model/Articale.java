@@ -10,59 +10,34 @@ public class Articale {
     private Long mAssetId;
     private String mByline;
     private Object mColumn;
-    private String mCountType;
-    private List<String> mDesFacet;
-    private Long mEmailCount;
-    private Long mEtaId;
-    private String mGeoFacet;
+    private Object mDesFacet;
+    private Object mGeoFacet;
     private Long mId;
     private List<Medium> mMedia;
-    private String mNytdsection;
-    private List<String> mOrgFacet;
-    private List<String> mPerFacet;
+    private Object mOrgFacet;
+   
+    private Object mPerFacet;
+    
     private String mPublishedDate;
+  
     private String mSection;
+   
     private String mSource;
-    private String mSubsection;
+   
     private String mTitle;
+   
     private String mType;
-    private String mUpdated;
-    private String mUri;
+    
     private String mUrl;
-
-    public Articale(String mAbstract, String mAdxKeywords, Long mAssetId, String mByline, Object mColumn, String mCountType, List<String> mDesFacet, Long mEmailCount, Long mEtaId, String mGeoFacet, Long mId, List<Medium> mMedia, String mNytdsection, List<String> mOrgFacet, List<String> mPerFacet, String mPublishedDate, String mSection, String mSource, String mSubsection, String mTitle, String mType, String mUpdated, String mUri, String mUrl) {
-        this.mAbstract = mAbstract;
-        this.mAdxKeywords = mAdxKeywords;
-        this.mAssetId = mAssetId;
-        this.mByline = mByline;
-        this.mColumn = mColumn;
-        this.mCountType = mCountType;
-        this.mDesFacet = mDesFacet;
-        this.mEmailCount = mEmailCount;
-        this.mEtaId = mEtaId;
-        this.mGeoFacet = mGeoFacet;
-        this.mId = mId;
-        this.mMedia = mMedia;
-        this.mNytdsection = mNytdsection;
-        this.mOrgFacet = mOrgFacet;
-        this.mPerFacet = mPerFacet;
-        this.mPublishedDate = mPublishedDate;
-        this.mSection = mSection;
-        this.mSource = mSource;
-        this.mSubsection = mSubsection;
-        this.mTitle = mTitle;
-        this.mType = mType;
-        this.mUpdated = mUpdated;
-        this.mUri = mUri;
-        this.mUrl = mUrl;
-    }
+   
+    private Long mViews;
 
     public String getAbstract() {
         return mAbstract;
     }
 
-    public void setAbstract(String mbstract) {
-        mAbstract = mbstract;
+    public void setAbstract(String mAbstract) {
+        this.mAbstract = mAbstract;
     }
 
     public String getAdxKeywords() {
@@ -97,43 +72,19 @@ public class Articale {
         mColumn = column;
     }
 
-    public String getCountType() {
-        return mCountType;
-    }
-
-    public void setCountType(String countType) {
-        mCountType = countType;
-    }
-
-    public List<String> getDesFacet() {
+    public Object getDesFacet() {
         return mDesFacet;
     }
 
-    public void setDesFacet(List<String> desFacet) {
+    public void setDesFacet(Object desFacet) {
         mDesFacet = desFacet;
     }
 
-    public Long getEmailCount() {
-        return mEmailCount;
-    }
-
-    public void setEmailCount(Long emailCount) {
-        mEmailCount = emailCount;
-    }
-
-    public Long getEtaId() {
-        return mEtaId;
-    }
-
-    public void setEtaId(Long etaId) {
-        mEtaId = etaId;
-    }
-
-    public String getGeoFacet() {
+    public Object getGeoFacet() {
         return mGeoFacet;
     }
 
-    public void setGeoFacet(String geoFacet) {
+    public void setGeoFacet(Object geoFacet) {
         mGeoFacet = geoFacet;
     }
 
@@ -153,27 +104,19 @@ public class Articale {
         mMedia = media;
     }
 
-    public String getNytdsection() {
-        return mNytdsection;
-    }
-
-    public void setNytdsection(String nytdsection) {
-        mNytdsection = nytdsection;
-    }
-
-    public List<String> getOrgFacet() {
+    public Object getOrgFacet() {
         return mOrgFacet;
     }
 
-    public void setOrgFacet(List<String> orgFacet) {
+    public void setOrgFacet(Object orgFacet) {
         mOrgFacet = orgFacet;
     }
 
-    public List<String> getPerFacet() {
+    public Object getPerFacet() {
         return mPerFacet;
     }
 
-    public void setPerFacet(List<String> perFacet) {
+    public void setPerFacet(Object perFacet) {
         mPerFacet = perFacet;
     }
 
@@ -201,14 +144,6 @@ public class Articale {
         mSource = source;
     }
 
-    public String getSubsection() {
-        return mSubsection;
-    }
-
-    public void setSubsection(String subsection) {
-        mSubsection = subsection;
-    }
-
     public String getTitle() {
         return mTitle;
     }
@@ -225,28 +160,20 @@ public class Articale {
         mType = type;
     }
 
-    public String getUpdated() {
-        return mUpdated;
-    }
-
-    public void setUpdated(String updated) {
-        mUpdated = updated;
-    }
-
-    public String getUri() {
-        return mUri;
-    }
-
-    public void setUri(String uri) {
-        mUri = uri;
-    }
-
     public String getUrl() {
         return mUrl;
     }
 
     public void setUrl(String url) {
         mUrl = url;
+    }
+
+    public Long getViews() {
+        return mViews;
+    }
+
+    public void setViews(Long views) {
+        mViews = views;
     }
 
 }
