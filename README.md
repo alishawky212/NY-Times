@@ -33,3 +33,5 @@ The  Guide to App Architecture proposes an architecture with the following main 
 
 
 The following diagram shows all the modules in our recommended architecture and how they interact with one another:
+
+![alt text](https://cdn-images-1.medium.com/max/800/1*Y5BEVDmFwJlH7qeKdvtyAQ.png)
