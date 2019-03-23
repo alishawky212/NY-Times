@@ -15,6 +15,16 @@ public class MediaMetadatumDataModel {
     @SerializedName("width")
     private Long mWidth;
 
+    public MediaMetadatumDataModel(String mFormat, Long mHeight, String mUrl, Long mWidth) {
+        this.mFormat = mFormat;
+        this.mHeight = mHeight;
+        this.mUrl = mUrl;
+        this.mWidth = mWidth;
+    }
+
+    public MediaMetadatumDataModel() {
+    }
+
     public String getFormat() {
         return mFormat;
     }

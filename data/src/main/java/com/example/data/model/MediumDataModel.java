@@ -19,6 +19,18 @@ public class MediumDataModel {
     @SerializedName("type")
     private String mType;
 
+    public MediumDataModel(Long mApprovedForSyndication, String mCaption, String mCopyright, List<MediaMetadatumDataModel> mMediaMetadata, String mSubtype, String mType) {
+        this.mApprovedForSyndication = mApprovedForSyndication;
+        this.mCaption = mCaption;
+        this.mCopyright = mCopyright;
+        this.mMediaMetadata = mMediaMetadata;
+        this.mSubtype = mSubtype;
+        this.mType = mType;
+    }
+
+    public MediumDataModel() {
+    }
+
     public Long getApprovedForSyndication() {
         return mApprovedForSyndication;
     }

@@ -30,7 +30,8 @@ ext {
             truth                 : '0.36',
             espresso              : '3.0.2',
             mockito               : '2.10.0',
-            testRunner            : '1.0.2'
+            testRunner            : '1.0.2',
+            archCoreTest          : '1.1.0'
     ]
     libraries = [
             appCompat             : "com.android.support:appcompat-v7:${versions.support}",
@@ -73,8 +74,10 @@ ext {
             idling                : "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso",
             idlingConcurrent      : "com.android.support.test.espresso.idling:idling-concurrent:$versions.espresso",
             contrib               : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
-            testRules             : "com.android.support.test:rules:$versions.testRunner"
-
+            testRules             : "com.android.support.test:rules:$versions.testRunner",
+            archCoreTest          : "android.arch.core:core-testing:$versions.archCoreTest",
+            mockito               : "org.mockito:mockito-core:$versions.mockito",
+            mockitoAndroid        : "org.mockito:mockito-android:$versions.mockito"
     ]
 }
 

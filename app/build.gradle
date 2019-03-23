@@ -10,11 +10,31 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    sourceSets.test.resources.srcDirs += ["src/main"]
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+        }
+    }
+
     buildTypes.each {
         buildTypes.each {
             it.buildConfigField 'String', 'API_KEY', "\"cdUar5iB34vC4CAc9AN4i1Pi1UM6hamz\""
         }
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            testCoverageEnabled true
+        }
+    }
+
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
@@ -51,4 +71,7 @@ dependencies {
     androidTestImplementation libraries.espressoCore
     androidTestImplementation libraries.idlingConcurrent
     androidTestImplementation libraries.testRules
+    testImplementation libraries.archCoreTest
+    testImplementation libraries.mockito
+//    androidTestImplementation libraries.mockitoAndroid
 }

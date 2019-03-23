@@ -14,16 +14,23 @@ import com.example.nytimes.models.ArticaleUIModel;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
+import io.reactivex.Scheduler;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.example.nytimes.di.SchedulersModule.IO_SCHEDULER;
+import static com.example.nytimes.di.SchedulersModule.MAIN_THREAD_SCHEDULER;
+
 public class ArticalesViewModel extends ViewModel {
 
     private ArticlesUseCase useCase;
     private ArticleUIMapper uiMapper;
+    private Scheduler main_thread;
+    private Scheduler io_thread;
 
     public MutableLiveData<List<ArticaleUIModel>> getArticles() {
         return articles;
@@ -32,16 +39,18 @@ public class ArticalesViewModel extends ViewModel {
     private MutableLiveData<List<ArticaleUIModel>> articles = new MutableLiveData<>();
 
     @Inject
-    public ArticalesViewModel(ArticlesUseCase useCase, ArticleUIMapper mapper) {
+    public ArticalesViewModel(ArticlesUseCase useCase, ArticleUIMapper mapper,@Named(value = IO_SCHEDULER) Scheduler subscribeOn, @Named(value = MAIN_THREAD_SCHEDULER) Scheduler observeOn) {
         this.useCase = useCase;
         this.uiMapper = mapper;
+        this.io_thread = subscribeOn;
+        this.main_thread = observeOn;
     }
 
     public void loadArticales(String apiKey){
         EspressoIdlingResource.increment();
         useCase.getArticles(apiKey).
-                subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                subscribeOn(io_thread)
+                .observeOn(main_thread)
                 .subscribe(new SingleObserver<List<Articale>>() {
             @Override
             public void onSubscribe(Disposable d) {
