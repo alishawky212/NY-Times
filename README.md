@@ -1,4 +1,7 @@
 # NY-Times
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/325630c3e6d04d269fa9b76995f762a6)](https://app.codacy.com/app/alishawky212/NY-Times?utm_source=github.com&utm_medium=referral&utm_content=alishawky212/NY-Times&utm_campaign=Badge_Grade_Dashboard)
+
 Simple Android App that implements Clean Code Architecture and SOLID Principles
 
 
