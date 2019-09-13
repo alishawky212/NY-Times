@@ -1,7 +1,6 @@
 pipeline {
-  agent {
-  	label 'android'
-  }
+  agent any
+  
   stages {
     stage ('Lint') {
       steps {
