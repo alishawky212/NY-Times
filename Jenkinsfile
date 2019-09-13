@@ -2,6 +2,7 @@ pipeline {
   agent {
   	label 'android'
   }
+  stages {
     stage ('Lint') {
       steps {
         sh './gradlew clean lintDebug'
@@ -16,3 +17,4 @@ pipeline {
       }
     }
   }
+}
